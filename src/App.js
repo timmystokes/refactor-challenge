@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   addItem = todoItem => {
-    const todoItems = this.state.todoItems;
+    const { todoItems } = this.state;
     todoItems.unshift({
       index: todoItems.length + 1,
       value: todoItem.newItemValue,
@@ -26,13 +26,13 @@ class App extends React.Component {
   }
 
   removeItem = itemIndex => {
-    const todoItems = this.state.todoItems;
+    const { todoItems } = this.state;
     todoItems.splice(itemIndex, 1);
     this.setState({ todoItems });
   }
 
   markTodoDone = itemIndex => {
-    const todoItems = this.state.todoItems;
+    const { todoItems } = this.state;
     const todo = todoItems[itemIndex];
     todoItems.splice(itemIndex, 1);
     todo.done = !todo.done;
